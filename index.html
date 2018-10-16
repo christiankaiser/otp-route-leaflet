@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OTP / Leaflet Routing example</title>
+  <meta charset="utf-8">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- For polyline decoding; from https://github.com/mapbox/polyline/ -->
+  <script src="polyline.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="top row">
+      <div class="col-sm">
+        <h1>OTP / Leaflet Routing example</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h3>Route:</h3>
+        <div class="form-group">
+          <label for="fromPoint">From:</label>
+          <input type="text" class="form-control" id="fromPoint" placeholder="latitude,longitude" value="46.6274,10.4462">
+          <small id="fromPointHelp" class="form-text text-muted">Only points in Switzerland are taken into account.</small>
+        </div>
+        <div class="form-group">
+          <label for="toPoint">To:</label>
+          <input type="text" class="form-control" id="toPoint" placeholder="latitude,longitude" value="46.5264,6.57996">
+          <small id="fromPointHelp" class="form-text text-muted">Only points in Switzerland are taken into account.</small>
+        </div>
+        <button class="btn btn-primary" onclick="calculateRoute()">Calculate</button>
+      </div>
+      <div class="col-sm-9">
+        <div id="map"></div>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
