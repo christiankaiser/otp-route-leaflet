@@ -56,6 +56,13 @@
           <small id="toAddressHelp" class="form-text text-muted">Only points in Switzerland are taken into account.</small>
         </div>
         <button class="btn btn-primary" onclick="calculateRouteFromAddress()">Calculate</button>
+
+        <hr />
+
+        <div class="form-group">
+          <label for="geojson">Route as GeoJSON:</label>
+          <textarea class="form-control" id="geojson" placeholder="Calclate a route to get a GeoJSON" disabled /></textarea>
+        </div>
       </div>
       <div class="col-sm-9">
         <div id="map"></div>

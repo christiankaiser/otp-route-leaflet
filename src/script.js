@@ -78,7 +78,7 @@ function calculateRoute(){
   makeRoutingQuery({
       fromPlace: fromPoint,
       toPlace: toPoint,
-      mode: 'BICYCLE',
+      mode: 'CAR',
   });
 }
 
@@ -111,6 +111,8 @@ function drawRoute(data){
   for (var i=0; i < itin.legs.length; i++){
     var leg = itin.legs[i].legGeometry.points;
     var geomLeg = polyline.toGeoJSON(leg);
+    window.GEOM = geomLeg;
+    document.getElementById('geojson').innerText = JSON.stringify(geomLeg);
     L.geoJSON(geomLeg, {
       style: function(feature){
         return { 
